@@ -1,0 +1,18 @@
+[package]
+name = "oidc"
+version = "0.0.1"
+edition = "2024"
+
+[dependencies]
+secrecy = "0.10.3"
+serde = { version = "1.0.228", features = ["derive"] }
+url = "2.5.7"
+
+[features]
+google = []
+default = ["google"]
+
+[[bin]]
+name = "provider-google"
+path = "src/bin/google.rs"
+required-features = ["google"]
